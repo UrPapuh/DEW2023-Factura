@@ -1,0 +1,19 @@
+{
+  "name": "dew2023-factura",
+  "version": "1.0.0",
+  "description": "Tabla de calculo",
+  "main": "index.js",
+  "scripts": {
+    "test": "jtest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrPapuh/DEW2023-Factura.git"
+  },
+  "author": "UrPapuh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrPapuh/DEW2023-Factura/issues"
+  },
+  "homepage": "https://github.com/UrPapuh/DEW2023-Factura#readme"
+}

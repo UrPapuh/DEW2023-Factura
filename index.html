@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factura</title>
+  <style>
+    div {
+      margin: auto;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 500px;
+      margin: auto;
+      text-align: right;
+
+    }
+    td, th {
+      border: solid black 1px;
+      padding-right: 10px;
+    }
+    th {
+      background-color: blue;
+      color: white;
+    }
+    td {
+      background-color: lightblue;
+    }
+    #tasa {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Factura</h1>
+  <div>
+    <p>
+      <label for="concepto">Concepto</label>
+      <input type="text" name="concepto">
+    </p>
+    <p>
+      <label for="cantidad">Cantidad</label>
+      <input type="text" name="cantidad">
+    </p>
+    <p>
+      <label for="precio">Precio</label>
+      <input type="text" name="precio">€
+    </p>
+    <p>
+      <button onclick="insert()">Insertar</button>
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Precio Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Subtotal</td>
+          <td id="subtotal">0.00€</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tasa:</td>
+          <td id="tasa"></td>
+          <td>Impuestos:</td>
+          <td id="impuestos">0.00€</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="3">TOTAL</td>
+          <td id="total">0.00€</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+    <p>
+      <button onclick="calculate(5)">Tasa 5%</button>
+      <button onclick="calculate(15)">Tasa 15%</button>
+      <button onclick="calculate(30)">Tasa 30%</button>
+    </p>
+  </div>
+  <script>
+    function calculate(tasa){}
+    function insert() {
+      // data
+      const concepto = document.querySelector('[name="concepto"]').value; // string
+      const cantidad = document.querySelector('[name="cantidad"]').value; // int
+      const precio = document.querySelector('[name="precio"]').value; // float
+// precio total + celda eliminar
+      const tbody = document.querySelector('tbody');
+      const tr = document.createElement("tr"); // row
+      // fill tds
+      [concepto, cantidad, precio].forEach(data => {
+        const td = document.createElement("td");
+        td.textContent = data;
+        tr.append(td);
+      });
+      tbody.append(tr);
+    }
+  </script>
+</body>
+</html>
