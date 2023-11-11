@@ -4,33 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Factura</title>
-  <style>
-    div {
-      margin: auto;
-      text-align: center;
-    }
-    table {
-      border-collapse: collapse;
-      min-width: 500px;
-      margin: auto;
-      text-align: right;
-
-    }
-    td, th {
-      border: solid black 1px;
-      padding-right: 10px;
-    }
-    th {
-      background-color: blue;
-      color: white;
-    }
-    td {
-      background-color: lightblue;
-    }
-    #tasa {
-      color: red;
-    }
-  </style>
+  <link rel="stylesheet" href="bill.css">
+  <script src="bill.js"></script>
 </head>
 <body>
   <h1>Factura</h1>
@@ -69,7 +44,7 @@
         </tr>
         <tr>
           <td>Tasa:</td>
-          <td id="tasa"></td>
+          <td id="tasa">30%</td>
           <td>Impuestos:</td>
           <td id="impuestos">0.00€</td>
           <td></td>
@@ -82,29 +57,10 @@
       </tfoot>
     </table>
     <p>
-      <button onclick="calculate(5)">Tasa 5%</button>
-      <button onclick="calculate(15)">Tasa 15%</button>
-      <button onclick="calculate(30)">Tasa 30%</button>
+      <button onclick="setTasa(5)">Tasa 5%</button>
+      <button onclick="setTasa(15)">Tasa 15%</button>
+      <button onclick="setTasa(30)">Tasa 30%</button>
     </p>
   </div>
-  <script>
-    function calculate(tasa){}
-    function insert() {
-      // data
-      const concepto = document.querySelector('[name="concepto"]').value; // string
-      const cantidad = document.querySelector('[name="cantidad"]').value; // int
-      const precio = document.querySelector('[name="precio"]').value; // float
-// precio total + celda eliminar
-      const tbody = document.querySelector('tbody');
-      const tr = document.createElement("tr"); // row
-      // fill tds
-      [concepto, cantidad, precio].forEach(data => {
-        const td = document.createElement("td");
-        td.textContent = data;
-        tr.append(td);
-      });
-      tbody.append(tr);
-    }
-  </script>
 </body>
 </html>

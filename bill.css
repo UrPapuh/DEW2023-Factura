@@ -1,0 +1,28 @@
+div {
+  margin: auto;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  min-width: 500px;
+  margin: auto;
+  text-align: right;
+}
+td, th {
+  border: solid black 1px;
+  padding-right: 10px;
+}
+th {
+  background-color: #01008c;
+  color: white;
+}
+tbody tr:nth-child(odd) {
+  background-color: #e4f2f9;
+}
+tfoot td {
+  background-color: #aed7e8;
+  font-weight: bolder;
+}
+#tasa {
+  color: red;
+}
